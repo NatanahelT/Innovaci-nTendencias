@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovación y Tendencias Educativas</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#1e3a8a;
+    --secondary:#2563eb;
+    --accent:#06b6d4;
+    --light:#f8fafc;
+    --dark:#0f172a;
+    --card:#ffffff;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--light);
+    color:#333;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+}
+
+.logo{
+    font-size:1.3rem;
+    font-weight:700;
+    color:var(--primary);
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:#333;
+    font-weight:500;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:var(--secondary);
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));
+    color:white;
+    padding:50px;
+}
+
+.hero-content{
+    animation:fadeIn 2s ease;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    max-width:800px;
+    margin:auto;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 25px;
+    background:white;
+    color:var(--primary);
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+section{
+    padding:90px 10%;
+}
+
+.section-title{
+    text-align:center;
+    color:var(--primary);
+    margin-bottom:40px;
+    font-size:2rem;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:var(--secondary);
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+th, td{
+    padding:15px;
+    border:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:var(--primary);
+    color:white;
+}
+
+.infografia{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.info-box{
+    background:white;
+    text-align:center;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.info-box span{
+    font-size:3rem;
+}
+
+.multimedia{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+iframe{
+    width:100%;
+    border:none;
+    border-radius:15px;
+    min-height:250px;
+}
+
+.escape-room{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.escape-room input{
+    padding:10px;
+    width:250px;
+    margin-top:15px;
+}
+
+.escape-room button{
+    padding:10px 20px;
+    margin-left:10px;
+    background:var(--secondary);
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.resultado{
+    margin-top:20px;
+    font-weight:bold;
+}
+
+footer{
+    background:var(--dark);
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.hero h1{
+    font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">Innovación y Tendencias</div>
+
+<ul>
+<li><a href="#introduccion">Introducción</a></li>
+<li><a href="#tecnologias">Tecnologías</a></li>
+<li><a href="#comparativo">Comparativo</a></li>
+<li><a href="#infografia">Infografía</a></li>
+<li><a href="#multimedia">Multimedia</a></li>
+<li><a href="#escape">Escape Room</a></li>
+<li><a href="#conclusion">Conclusiones</a></li>
+</ul>
+
+</nav>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+<h1>Innovación y Tendencias Educativas</h1>
+
+<p>
+Explora las tecnologías emergentes que están transformando
+la educación, la enseñanza y el aprendizaje en el siglo XXI.
+</p>
+
+<a href="#introduccion" class="btn">Comenzar</a>
+
+</div>
+
+</section>
+
+<section id="introduccion">
+
+<h2 class="section-title">Introducción</h2>
+
+<p>
+La innovación educativa implica la incorporación de nuevas metodologías,
+herramientas digitales y enfoques pedagógicos para mejorar los procesos
+de enseñanza y aprendizaje. Actualmente, tecnologías como la Inteligencia
+Artificial, la Realidad Aumentada y la Gamificación están revolucionando
+las aulas y los entornos virtuales.
+</p>
+
+</section>
+
+<section id="tecnologias">
+
+<h2 class="section-title">Tecnologías Emergentes</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>🤖 Inteligencia Artificial</h3>
+<p>
+Permite personalizar el aprendizaje, automatizar tareas y brindar
+asistencia inteligente mediante chatbots, tutores virtuales y análisis de datos.
+</p>
+</div>
+
+<div class="card">
+<h3>📱 Realidad Aumentada</h3>
+<p>
+Integra elementos virtuales con el mundo real, mejorando la comprensión
+de conceptos complejos mediante experiencias inmersivas.
+</p>
+</div>
+
+<div class="card">
+<h3>🥽 Realidad Virtual</h3>
+<p>
+Ofrece entornos completamente inmersivos para simulaciones, laboratorios
+virtuales y aprendizaje experiencial.
+</p>
+</div>
+
+<div class="card">
+<h3>🎮 Gamificación</h3>
+<p>
+Utiliza mecánicas de juego para aumentar la motivación, participación
+y compromiso de los estudiantes.
+</p>
+</div>
+
+<div class="card">
+<h3>🚀 Tendencias Emergentes</h3>
+<p>
+Microlearning, aprendizaje adaptativo, analítica educativa,
+metaverso educativo y aprendizaje móvil.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="comparativo">
+
+<h2 class="section-title">Cuadro Comparativo</h2>
+
+<table>
+
+<tr>
+<th>Tecnología</th>
+<th>Ventajas</th>
+<th>Aplicación Educativa</th>
+</tr>
+
+<tr>
+<td>IA</td>
+<td>Personalización</td>
+<td>Tutores inteligentes</td>
+</tr>
+
+<tr>
+<td>RA</td>
+<td>Visualización</td>
+<td>Modelos 3D interactivos</td>
+</tr>
+
+<tr>
+<td>RV</td>
+<td>Inmersión</td>
+<td>Simulaciones virtuales</td>
+</tr>
+
+<tr>
+<td>Gamificación</td>
+<td>Motivación</td>
+<td>Retos y recompensas</td>
+</tr>
+
+</table>
+
+</section>
+
+<section id="infografia">
+
+<h2 class="section-title">Infografía</h2>
+
+<div class="infografia">
+
+<div class="info-box">
+<span>🤖</span>
+<h3>IA</h3>
+<p>Aprendizaje personalizado</p>
+</div>
+
+<div class="info-box">
+<span>📱</span>
+<h3>RA</h3>
+<p>Objetos digitales sobre la realidad</p>
+</div>
+
+<div class="info-box">
+<span>🥽</span>
+<h3>RV</h3>
+<p>Experiencias inmersivas</p>
+</div>
+
+<div class="info-box">
+<span>🎮</span>
+<h3>Gamificación</h3>
+<p>Aprender jugando</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="multimedia">
+
+<h2 class="section-title">Recursos Multimedia</h2>
+
+<div class="multimedia">
+
+<div>
+<h3>🎥 Video Educativo</h3>
+<iframe src="https://www.youtube.com/embed/aircAruvnKk"></iframe>
+</div>
+
+<div>
+<h3>🎙 Podcast Educativo</h3>
+<iframe src="https://open.spotify.com/embed/show/4rOoJ6Egrf8K2IrywzwOMk"></iframe>
+</div>
+
+<div>
+<h3>📊 Presentación</h3>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/1"></iframe>
+</div>
+
+</div>
+
+</section>
+
+<section id="escape">
+
+<h2 class="section-title">Escape Room Educativo</h2>
+
+<div class="escape-room">
+
+<h3>🔐 Desafío</h3>
+
+<p>
+¿Qué tecnología combina elementos virtuales con el mundo real?
+</p>
+
+<input type="text" id="respuesta" placeholder="Escribe tu respuesta">
+
+<button onclick="verificar()">
+Comprobar
+</button>
+
+<div class="resultado" id="resultado"></div>
+
+</div>
+
+</section>
+
+<section id="conclusion">
+
+<h2 class="section-title">Conclusiones</h2>
+
+<p>
+Las tendencias tecnológicas están redefiniendo la educación contemporánea.
+La Inteligencia Artificial, la Realidad Aumentada, la Realidad Virtual y la
+Gamificación ofrecen nuevas oportunidades para construir experiencias de
+aprendizaje más significativas, inclusivas e innovadoras. La integración
+responsable de estas tecnologías permite desarrollar competencias clave para
+el futuro digital.
+</p>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 - Innovación y Tendencias Educativas
+</p>
+
+</footer>
+
+<script>
+
+function verificar(){
+
+const respuesta =
+document.getElementById("respuesta")
+.value
+.toLowerCase()
+.trim();
+
+const resultado =
+document.getElementById("resultado");
+
+if(
+respuesta === "realidad aumentada" ||
+respuesta === "ra"
+){
+resultado.innerHTML =
+"✅ ¡Correcto! Has desbloqueado la siguiente etapa.";
+resultado.style.color="green";
+}
+else{
+resultado.innerHTML =
+"❌ Intenta nuevamente.";
+resultado.style.color="red";
+}
+
+}
+
+</script>
+
+</body>
+</html>
